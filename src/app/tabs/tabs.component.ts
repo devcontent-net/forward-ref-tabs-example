@@ -1,6 +1,5 @@
 import { AfterContentInit, Component, ContentChildren, QueryList } from '@angular/core';
-import { TabComponent } from '../tab/tab.component';
-import { TabInterface } from '../tabs.properties';
+import { TabInterface, TAB_COMPONENT_TOKEN } from '../tabs.properties';
 
 @Component({
   selector: 'app-tabs',
@@ -14,7 +13,7 @@ import { TabInterface } from '../tabs.properties';
   `
 })
 export class TabsComponent implements AfterContentInit {
-  @ContentChildren('TabComponent') tabs!: QueryList<TabInterface>;
+  @ContentChildren(TAB_COMPONENT_TOKEN) tabs!: QueryList<TabInterface>;
 
   selectTab(tab: TabInterface) {
     // ...

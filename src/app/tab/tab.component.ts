@@ -1,5 +1,5 @@
 import { Component, forwardRef, Input } from '@angular/core';
-import { TabInterface } from '../tabs.properties';
+import { TAB_COMPONENT_TOKEN, TabInterface } from '../tabs.properties';
 
 @Component({
   selector: 'app-tab',
@@ -10,7 +10,7 @@ import { TabInterface } from '../tabs.properties';
   `,
   providers: [
     {
-      provide: 'TabComponent', // just token name
+      provide: TAB_COMPONENT_TOKEN,
       useExisting: forwardRef(() => TabComponent)
     }
   ]
